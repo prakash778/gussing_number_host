@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guessing Number Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+        <h1>Guessing Number Game</h1>
+
+        <!-- Welcome screen -->
+        <div id="welcome-screen">
+            <label for="player-name">Enter your name: </label>
+            <input type="text" id="player-name" required>
+            <button onclick="startGame()">Start Game</button>
+        </div>
+
+        <!-- Game screen -->
+        <div id="game-screen" class="hidden">
+            <h2 id="greeting"></h2>
+            <p>Guess the 4-digit number:</p>
+            <input type="text" id="guess" maxlength="4" required>
+            <button onclick="checkGuess()">Submit Guess</button>
+            <p id="feedback"></p>
+            <p>Guesses: <span id="guess-count">0</span></p>
+        </div>
+
+        <!-- End screen -->
+        <div id="end-screen" class="hidden">
+            <h2>Congratulations!</h2>
+            <p>You guessed the number in <span id="total-guesses"></span> guesses.</p>
+            <p>Your time: <span id="total-time"></span> seconds</p>
+            <p>The 4-digit number was: <span id="generated-number"></span></p> <!-- Display generated number here -->
+            <div id="best-player-info">
+                <h3>Best Player</h3>
+                <p id="best-player-name">No best player yet.</p>
+                <p id="best-player-guesses"></p>
+                <p id="best-player-time"></p>
+            </div>
+            <button onclick="resetGame()">Play Again</button>
+        </div>
+    </div>
+
+    <script src="game.js"></script>
+</body>
+</html>
